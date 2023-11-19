@@ -3,7 +3,7 @@ package com.app.model;
 public class Project {
     private long id;
     private String name;
-    private String description;
+    private String color;
 
     public long getId() {
         return id;
@@ -21,11 +21,11 @@ public class Project {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getColor() {
+        return color;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setColor(String color) {
+        this.color = color;
     }
 }

@@ -1,6 +1,6 @@
 package com.app.model;
 
-public class TicketType {
+public class Label {
     private long id;
     private String name;
 

@@ -2,11 +2,11 @@ package com.app.model;
 
 public class User {
     private long id;
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
     private String email;
-    private long roleId;
-    private String photoUrl;
+    private String password;
+    private String avatarUrl;
 
     public long getId() {
         return id;
@@ -16,20 +16,20 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -40,19 +40,19 @@ public class User {
         this.email = email;
     }
 
-    public long getRoleId() {
-        return roleId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRoleId(long roleId) {
-        this.roleId = roleId;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

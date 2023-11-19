@@ -1,6 +1,6 @@
 package com.app.model;
 
-public class Epic {
+public class Status {
     private long id;
     private String name;
 
