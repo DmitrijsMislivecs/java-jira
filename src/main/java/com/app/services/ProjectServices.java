@@ -5,6 +5,8 @@ import com.app.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProjectServices {
     @Autowired
@@ -12,5 +14,9 @@ public class ProjectServices {
 
     public void StoreNewProject(Project project) {
         projectDAO.storeNewProject(project);
+    }
+
+    public List<Project> getAllProjects() {
+        return projectDAO.getAllProjects();
     }
 }

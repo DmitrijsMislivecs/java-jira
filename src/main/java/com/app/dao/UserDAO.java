@@ -22,11 +22,11 @@ public class UserDAO {
 
     public List<User> getAllUsers() {
         RowMapper<User> rowMapper = (rs, rowNumber) -> mapUser(rs);
-        return jdbcTemplate.query("SELECT * FROM users", rowMapper);
 
+        return jdbcTemplate.query("SELECT * FROM users", rowMapper);
     }
 
-    private  User mapUser(ResultSet rs) throws SQLException {
+    private User mapUser(ResultSet rs) throws SQLException {
         User user = new User();
 
         user.setId(rs.getLong("id"));
