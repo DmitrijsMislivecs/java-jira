@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show all Projects Page</title>
+</head>
+<body>
+<div th:each="project : ${projects}">
+  <div th:text="${'Project ID: ' + project.id}"></div>
+  <div th:text="${'Project name: ' + project.name}"></div>
+  <div th:text="${'Project color: ' + project.color}"></div>
+  <hr>
+</div>
+</body>
+</html>
