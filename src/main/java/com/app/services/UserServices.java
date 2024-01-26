@@ -3,6 +3,7 @@ package com.app.services;
 import com.app.dao.UserDAO;
 import com.app.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,10 @@ public class UserServices {
     private UserDAO userDAO;
 
     public void storeNewUser(User user) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encoderPassword = encoder.encode(user.getPassword());
+        user.setPassword(encoderPassword);
+
         userDAO.storeNewUser(user);
     }
 

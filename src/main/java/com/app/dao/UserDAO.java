@@ -26,6 +26,12 @@ public class UserDAO {
         return jdbcTemplate.query("SELECT * FROM users", rowMapper);
     }
 
+    public List<User> getUserByEmail(String email) {
+        RowMapper<User> rowMapper = (rs, rowNumber) -> mapUser(rs);
+
+        return jdbcTemplate.query("SELECT * FROM users WHERE email = ?", rowMapper, email);
+    }
+
     private User mapUser(ResultSet rs) throws SQLException {
         User user = new User();
 
@@ -33,6 +39,7 @@ public class UserDAO {
         user.setFirstName(rs.getString("first_name"));
         user.setLastName(rs.getString("last_name"));
         user.setEmail(rs.getString("email"));
+        user.setPassword(rs.getString("password"));
 
         return user;
     }
