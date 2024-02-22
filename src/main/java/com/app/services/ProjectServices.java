@@ -12,7 +12,7 @@ public class ProjectServices {
     @Autowired
     private ProjectDAO projectDAO;
 
-    public void StoreNewProject(Project project) {
+    public void storeNewProject(Project project) {
         projectDAO.storeNewProject(project);
     }
 

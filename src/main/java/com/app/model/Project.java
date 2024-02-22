@@ -11,6 +11,8 @@ public class Project {
         this.color = color;
     }
 
+    public Project() {}
+
     public long getId() {
         return id;
     }
