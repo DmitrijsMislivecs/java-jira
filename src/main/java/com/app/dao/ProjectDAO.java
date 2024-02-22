@@ -28,12 +28,10 @@ public class ProjectDAO {
     }
 
     private Project mapProject(ResultSet rs) throws SQLException {
-        Project project = new Project();
-
-        project.setId(rs.getInt("id"));
-        project.setName(rs.getString("name"));
-        project.setColor(rs.getString("color"));
-
-        return project;
+        return new Project(
+                rs.getLong("id"),
+                rs.getString("name"),
+                rs.getString("color")
+        );
     }
 }
