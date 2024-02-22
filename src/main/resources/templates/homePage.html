@@ -1,11 +1,13 @@
-<html lang="">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
-        <title>
-        </title>
+        <meta charset="UTF-8">
+        <title>Java Jira home Page</title>
     </head>
     <body>
-        <div>
-            Hello, World!
+        <div th:each="project : ${projects}">
+            <div  th:text="${project.name"></div>
         </div>
+        <div><a href="/new-project">Create Project</a></div>
     </body>
 </html>
