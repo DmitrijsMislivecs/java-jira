@@ -29,6 +29,14 @@ public class TicketsDAO {
                 "WHERE project_id = ?", rowMapper, projectId);
     }
 
+    public List<Ticket> getLastTickets(int count) {
+        RowMapper<Ticket> rowMapper = (rs, rowNumber) -> mapTicket(rs);
+        return jdbcTemplate.query("SELECT u.id AS uid, u.first_name, u.last_name, t.id AS tid, t.summary, t.description, t.project_id FROM tickets t " +
+                "INNER JOIN users u ON u.id = t.reporter_id " +
+                "ORDER BY t.id DESC " +
+                "LIMIT ?", rowMapper, count);
+    }
+
     private Ticket mapTicket(ResultSet rs) throws SQLException {
         User user = new User();
         user.setId(rs.getLong("uid"));
