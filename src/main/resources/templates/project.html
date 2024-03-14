@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project</title>
+  <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div th:each="ticket: ${tickets}" class="ticket">
+    <b>Ticket id:</b>&nbsp;<div th:text="${ticket.id}"></div>&nbsp;
+    <b>Summary:</b>&nbsp;<div th:text="${ticket.summary}"></div>&nbsp;
+    <b>Reporter:</b>&nbsp;<div th:text="${ticket.user.firstName + ' ' + ticket.user.lastName}"></div>
+
+  </div>
+</form>
+</body>
+</html>
